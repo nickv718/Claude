@@ -142,9 +142,6 @@
   .spec div:first-child { border-top:0; }
   .spec dt { color:var(--text-muted); }
   .spec dd { margin:0; font-family:var(--mono); font-size:14px; text-align:right; }
-  .instructor { display:grid; gap:20px; }
-  .avatar { width:72px; height:72px; border-radius:20px; border:1px dashed var(--warning); display:grid; place-items:center; font-family:var(--mono); font-size:11px; color:var(--warning); }
-  .instructor h3 { font-size:28px; }
 
   /* Pricing */
   .price-card { max-width:560px; background:var(--surface); border:2px solid var(--primary); border-radius:var(--r-lg); padding:32px; }
@@ -312,14 +309,15 @@
     </div>
   </section>
 
-  <!-- WHAT YOU GET + INSTRUCTOR -->
+  <!-- WHAT YOU GET -->
   <section class="block" id="inside" aria-labelledby="insideH">
     <div class="wrap spec-grid">
+      <div class="sec-head" style="margin-bottom:0">
+        <p class="eyebrow">What you get</p>
+        <h2 id="insideH">One file, yours to keep</h2>
+        <p>Everything is in a single PDF you download once and keep. Read it on your phone, or print the checklist.</p>
+      </div>
       <div>
-        <div class="sec-head" style="margin-bottom:28px">
-          <p class="eyebrow">What you get</p>
-          <h2 id="insideH">One file, yours to keep</h2>
-        </div>
         <dl class="spec">
           <div><dt>Format</dt><dd>PDF</dd></div>
           <div><dt>Length</dt><dd><span class="ph">[X] pages</span></dd></div>
@@ -328,18 +326,6 @@
           <div><dt>Payment</dt><dd>One-time</dd></div>
           <div><dt>Delivery</dt><dd>Instant download</dd></div>
         </dl>
-      </div>
-      <div>
-        <div class="sec-head" style="margin-bottom:28px">
-          <p class="eyebrow">The author</p>
-          <h2>Who wrote it</h2>
-        </div>
-        <div class="instructor">
-          <div class="avatar" aria-hidden="true">PHOTO</div>
-          <h3><span class="ph">[YOUR NAME / HANDLE]</span></h3>
-          <p class="ph ph-block">[BIO: 2–3 sentences. How long you've been in crypto, what you've done, and why you wrote this guide. Only claims you can back up. No P&amp;L screenshots or income figures.]</p>
-          <p><span class="ph">[X / Twitter link]</span></p>
-        </div>
       </div>
     </div>
   </section>
