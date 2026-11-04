@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="el">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>HERA RENTAL — Ενοικιάσεις αυτοκινήτων & van, Ηράκλειο Αττικής</title>
+<meta name="description" content="Ενοικιάσεις αυτοκινήτων και επαγγελματικών van στο Ηράκλειο Αττικής. Βραχυχρόνια ενοικίαση και μακροχρόνια μίσθωση. Παραλαβή από τα κεντρικά γραφεία ή το αεροδρόμιο.">
+<meta name="theme-color" content="#0a0a0b">
+<link rel="icon" href="https://herarental.gr/wp-content/uploads/2026/05/cropped-favicon-HERA-RENTAL-pdf-32x32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ============ LOADER ============ -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader__inner">
+    <img src="assets/logo.png" alt="" class="loader__logo">
+    <div class="loader__bar"><span id="loaderBar"></span></div>
+    <div class="loader__meta mono"><span>ΕΚΚΙΝΗΣΗ ΚΙΝΗΤΗΡΑ</span><span id="loaderNum">000</span></div>
+  </div>
+</div>
+
+<div class="cursor" id="cursor" aria-hidden="true"><span></span></div>
+
+<!-- ============ HEADER ============ -->
+<header class="hdr" id="hdr">
+  <a href="#top" class="hdr__logo" aria-label="HERA RENTAL αρχική"><img src="assets/logo.png" alt="HERA RENTAL"></a>
+  <nav class="hdr__nav mono" aria-label="Κύρια πλοήγηση">
+    <a href="#showroom"><i>01.</i> Showroom</a>
+    <a href="#why"><i>02.</i> Γιατί Hera</a>
+    <a href="#flex"><i>03.</i> Hera Flex</a>
+    <a href="#reviews"><i>04.</i> Κριτικές</a>
+    <a href="#contact"><i>05.</i> Επικοινωνία</a>
+  </nav>
+  <a href="tel:+302104402050" class="hdr__call mono"><span class="dot"></span>210 440 2050</a>
+  <button class="hdr__burger" id="burger" aria-label="Μενού" aria-expanded="false"><span></span><span></span></button>
+</header>
+
+<div class="menu" id="menu" aria-hidden="true">
+  <nav class="menu__nav">
+    <a href="#showroom"><i class="mono">01</i>Showroom</a>
+    <a href="#why"><i class="mono">02</i>Γιατί Hera</a>
+    <a href="#flex"><i class="mono">03</i>Hera Flex</a>
+    <a href="#reviews"><i class="mono">04</i>Κριτικές</a>
+    <a href="#contact"><i class="mono">05</i>Επικοινωνία</a>
+  </nav>
+  <div class="menu__foot mono">
+    <a href="tel:+302104402050">+30 210 440 2050</a>
+    <a href="mailto:info@herarental.gr">info@herarental.gr</a>
+  </div>
+</div>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="hero">
+  <div class="hero__bg">
+    <div class="hero__glow"></div>
+    <div class="hero__floor"><div class="hero__grid"></div></div>
+    <div class="streaks" id="streaks"></div>
+  </div>
+
+  <div class="hero__hud mono" aria-hidden="true">
+    <div class="hud-tl"><span>ΗΡΑΚΛΕΙΟ ΑΤΤΙΚΗΣ</span><span>38.0498° N · 23.7660° E</span></div>
+    <div class="hud-tr"><span>ΣΤΟΛΟΣ</span><span><b>08</b> ΚΑΤΗΓΟΡΙΕΣ</span></div>
+  </div>
+
+  <div class="hero__title">
+    <p class="eyebrow mono"><span class="tick"></span>Vans &amp; Cars · Βραχυχρόνια &amp; μακροχρόνια μίσθωση</p>
+    <h1 class="hero__h1">
+      <span class="line"><span class="w">Οδήγησε</span></span>
+      <span class="line"><span class="w accent">κάτι</span> <span class="w">καλύτερο.</span></span>
+    </h1>
+  </div>
+
+  <div class="hero__stage">
+    <div class="hero__car" id="heroCar">
+      <img src="assets/cars/car3.webp" alt="Μεγάλο αυτοκίνητο του στόλου HERA RENTAL" width="618" height="292">
+      <div class="hero__shadow"></div>
+      <div class="hero__lights"><span></span><span></span></div>
+    </div>
+  </div>
+
+  <div class="speedo mono" aria-hidden="true">
+    <div class="speedo__num"><span id="speed">000</span><small>km/h</small></div>
+    <div class="speedo__bar"><span id="speedBar"></span></div>
+    <div class="speedo__lbl">SCROLL ΓΙΑ ΕΚΚΙΝΗΣΗ ↓</div>
+  </div>
+</section>
+
+<!-- ============ BOOKING ============ -->
+<section class="booking" id="booking" aria-labelledby="bookTitle">
+  <form class="book" id="bookForm" novalidate>
+    <div class="book__head">
+      <div>
+        <p class="mono book__kicker">// Online κράτηση · Άμεση επιβεβαίωση</p>
+        <h2 id="bookTitle" class="book__title">Βρες το όχημά σου</h2>
+      </div>
+      <div class="seg" role="tablist" aria-label="Τύπος οχήματος">
+        <button type="button" role="tab" class="seg__btn is-active" data-type="cars" aria-selected="true">
+          <svg viewBox="0 0 32 16" aria-hidden="true"><path d="M2 12h2a3 3 0 0 0 6 0h12a3 3 0 0 0 6 0h2v-3l-3-2-5-4H10L6 7 2 8z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          Αυτοκίνητα
+        </button>
+        <button type="button" role="tab" class="seg__btn" data-type="vans" aria-selected="false">
+          <svg viewBox="0 0 32 16" aria-hidden="true"><path d="M2 12h2a3 3 0 0 0 6 0h12a3 3 0 0 0 6 0h2V8l-4-4h-6V2H2z M20 4v4h8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          Επαγγελματικά
+        </button>
+        <span class="seg__pill" aria-hidden="true"></span>
+      </div>
+    </div>
+
+    <div class="book__grid">
+      <label class="fld fld--wide">
+        <span class="fld__lbl mono">Παραλαβή</span>
+        <select name="pickup" id="pickup">
+          <option>Κεντρικά Γραφεία – Ηράκλειο Αττικής</option>
+          <option>Αεροδρόμιο Αθηνών «Ελευθέριος Βενιζέλος»</option>
+        </select>
+      </label>
+      <label class="fld fld--wide is-hidden" id="dropWrap">
+        <span class="fld__lbl mono">Επιστροφή</span>
+        <select name="dropoff" id="dropoff">
+          <option>Κεντρικά Γραφεία – Ηράκλειο Αττικής</option>
+          <option>Αεροδρόμιο Αθηνών «Ελευθέριος Βενιζέλος»</option>
+        </select>
+      </label>
+      <label class="fld">
+        <span class="fld__lbl mono">Ημ. παραλαβής</span>
+        <input type="date" name="from" id="dFrom" required>
+      </label>
+      <label class="fld fld--time">
+        <span class="fld__lbl mono">Ώρα</span>
+        <select name="fromTime" class="time"></select>
+      </label>
+      <label class="fld">
+        <span class="fld__lbl mono">Ημ. επιστροφής</span>
+        <input type="date" name="to" id="dTo" required>
+      </label>
+      <label class="fld fld--time">
+        <span class="fld__lbl mono">Ώρα</span>
+        <select name="toTime" class="time"></select>
+      </label>
+      <label class="fld fld-cat">
+        <span class="fld__lbl mono">Κατηγορία</span>
+        <select name="category" id="category"></select>
+      </label>
+    </div>
+
+    <div class="book__foot">
+      <div class="checks">
+        <label class="chk"><input type="checkbox" id="sameReturn" checked><span></span>Επιστροφή στην ίδια τοποθεσία</label>
+        <label class="chk"><input type="checkbox" name="age" checked><span></span>Ο οδηγός είναι 30–65 ετών</label>
+      </div>
+      <div class="book__sum mono" id="bookSum"><b id="days">4</b> ημέρες ενοικίασης</div>
+      <button class="btn btn--primary magnetic" type="submit"><span>Βρείτε όχημα</span><i>→</i></button>
+    </div>
+
+    <div class="book__result" id="bookResult" hidden>
+      <p><b>Το αίτημά σας είναι έτοιμο.</b> <span id="bookText"></span></p>
+      <div class="book__resultBtns">
+        <a class="btn btn--ghost" id="bookMail" href="#">Αποστολή με email</a>
+        <a class="btn btn--ghost" href="tel:+302104402050">Κλήση 210 440 2050</a>
+      </div>
+    </div>
+  </form>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track" id="marquee">
+    <span>Αυτοκίνητα</span><b>✦</b><span>Επαγγελματικά van</span><b>✦</b><span>Ηλεκτρικά</span><b>✦</b><span>Μακροχρόνια μίσθωση</span><b>✦</b>
+    <span>Αυτοκίνητα</span><b>✦</b><span>Επαγγελματικά van</span><b>✦</b><span>Ηλεκτρικά</span><b>✦</b><span>Μακροχρόνια μίσθωση</span><b>✦</b>
+  </div>
+</div>
+
+<!-- ============ SHOWROOM ============ -->
+<section class="showroom" id="showroom" aria-labelledby="showTitle">
+  <div class="show__pin">
+    <div class="show__top">
+      <div>
+        <p class="mono eyebrow"><span class="tick"></span>01. Showroom</p>
+        <h2 id="showTitle" class="show__title">Επιλέξτε το όχημα<br>που σας ταιριάζει</h2>
+      </div>
+      <div class="show__index mono" id="showIndex" role="tablist" aria-label="Κατηγορίες"></div>
+    </div>
+
+    <div class="show__viewport">
+      <div class="show__spot" aria-hidden="true"></div>
+      <div class="show__track" id="showTrack"><!-- slides injected by JS --></div>
+    </div>
+
+    <div class="show__bottom mono">
+      <span id="showCount">01 / 08</span>
+      <div class="show__progress"><span id="showProg"></span></div>
+      <span class="show__hint">Κάντε scroll →</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY ============ -->
+<section class="why" id="why" aria-labelledby="whyTitle">
+  <div class="wrap">
+    <p class="mono eyebrow"><span class="tick"></span>02. Γιατί Hera Rental</p>
+    <h2 id="whyTitle" class="h2 reveal">Επιλογές που ταιριάζουν<br>σε <em>κάθε</em> σας διαδρομή.</h2>
+
+    <div class="stats">
+      <div class="stat"><b class="mono" data-count="320" data-suffix="+">0</b><span>κριτικές Google ★★★★★</span></div>
+      <div class="stat"><b class="mono" data-count="8">0</b><span>κατηγορίες οχημάτων</span></div>
+      <div class="stat"><b class="mono" data-count="7" data-suffix="/7">0</b><span>ημέρες εξυπηρέτηση</span></div>
+      <div class="stat"><b class="mono" data-count="2">0</b><span>σημεία παραλαβής</span></div>
+    </div>
+
+    <div class="feats">
+      <article class="feat tilt">
+        <span class="feat__n mono">/01</span>
+        <svg class="feat__ic" viewBox="0 0 48 48" aria-hidden="true"><path d="M4 30h3a4 4 0 0 0 8 0h10V14H4z M25 20h8l6 6v4h-3a4 4 0 0 1-8 0" /><circle cx="11" cy="30" r="3"/><circle cx="32" cy="30" r="3"/></svg>
+        <h3>Σύγχρονος στόλος</h3>
+        <p>Επιβατικά αυτοκίνητα και επαγγελματικά van για τις προσωπικές και επαγγελματικές σας ανάγκες.</p>
+      </article>
+      <article class="feat tilt">
+        <span class="feat__n mono">/02</span>
+        <svg class="feat__ic" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 4l16 6v12c0 10-7 18-16 22C15 40 8 32 8 22V10z"/><path d="M16 23l6 6 11-12"/></svg>
+        <h3>Ασφάλεια &amp; αξιοπιστία</h3>
+        <p>Πλήρης ενημέρωση για τη βασική κάλυψη και τις προαιρετικές επιλογές προστασίας.</p>
+      </article>
+      <article class="feat tilt">
+        <span class="feat__n mono">/03</span>
+        <svg class="feat__ic" viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="9" width="36" height="32" rx="3"/><path d="M6 18h36M15 5v8M33 5v8"/><path d="M17 29l5 5 9-10"/></svg>
+        <h3>Online κράτηση</h3>
+        <p>Επιλέξτε όχημα και ημερομηνίες μέσα από την ιστοσελίδα μας και οργανώστε την επόμενη μετακίνησή σας.</p>
+      </article>
+      <article class="feat tilt">
+        <span class="feat__n mono">/04</span>
+        <svg class="feat__ic" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 44V8M24 10h14l4 5-4 5H24M24 24H10l-4 5 4 5h14"/></svg>
+        <h3>Ευελιξία μίσθωσης</h3>
+        <p>Λύσεις μίσθωσης για την καθημερινότητα, την εργασία, τα ταξίδια και τις ιδιαίτερες στιγμές σας.</p>
+      </article>
+      <article class="feat tilt">
+        <span class="feat__n mono">/05</span>
+        <svg class="feat__ic" viewBox="0 0 48 48" aria-hidden="true"><path d="M6 30h3a4 4 0 0 0 8 0h12a4 4 0 0 0 8 0h3v-6l-5-3-6-7H15l-5 7-4 2z"/><path d="M38 6v10M33 11h10"/></svg>
+        <h3>Πρόσθετος εξοπλισμός</h3>
+        <p>Πρόσθετος εξοπλισμός και υπηρεσίες, ανάλογα με τις ανάγκες σας και τη διαθεσιμότητα.</p>
+      </article>
+      <article class="feat tilt">
+        <span class="feat__n mono">/06</span>
+        <svg class="feat__ic" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 28v-4a16 16 0 0 1 32 0v4"/><rect x="5" y="26" width="8" height="12" rx="3"/><rect x="35" y="26" width="8" height="12" rx="3"/><path d="M39 38c0 4-5 6-11 6"/></svg>
+        <h3>Δίπλα σας 7 ημέρες</h3>
+        <p>Από Δευτέρα έως Κυριακή, με παραλαβή οχήματος κατόπιν συνεννόησης.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HERA FLEX ============ -->
+<section class="flex" id="flex" aria-labelledby="flexTitle">
+  <div class="flex__pin">
+    <div class="flex__bigtext mono" aria-hidden="true">HERA FLEX</div>
+    <div class="wrap flex__wrap">
+      <div class="flex__copy">
+        <p class="mono eyebrow eyebrow--dark"><span class="tick"></span>03. Hera Flex · Μακροχρόνια μίσθωση</p>
+        <h2 id="flexTitle" class="flex__title">Το παλιό σου αυτοκίνητο <span>μετράει.</span></h2>
+        <ol class="flex__steps">
+          <li><i class="mono">01</i><div><b>Εκτιμούμε το όχημά σου</b><p>Και, εφόσον αποδεχθείς την προσφορά μας, η συμφωνημένη αξία χρησιμοποιείται ως προκαταβολή για το νέο σου.</p></div></li>
+          <li><i class="mono">02</i><div><b>Η αξία του γίνεται προκαταβολή</b><p>Το ποσό της προκαταβολής κατανέμεται ισόποσα στους μήνες της μίσθωσης.</p></div></li>
+          <li><i class="mono">03</i><div><b>Πληρώνεις μικρότερο μηνιαίο μίσθωμα</b><p>Μειώνοντας έτσι το μηνιαίο σου μίσθωμα από τον πρώτο μήνα.</p></div></li>
+        </ol>
+        <a href="mailto:info@herarental.gr?subject=Εκτίμηση%20αυτοκινήτου%20-%20HERA%20FLEX" class="btn btn--dark magnetic"><span>Ζήτησε εκτίμηση</span><i>→</i></a>
+        <p class="flex__note">Η τελική αξία του οχήματος καθορίζεται μετά από έλεγχο και αξιολόγηση από τη HERA FLEX.</p>
+      </div>
+      <div class="flex__visual" aria-hidden="true">
+        <div class="flex__car flex__car--old"><img src="assets/cars/car1.webp" alt=""></div>
+        <div class="flex__arrow mono">ΑΞΙΑ → ΠΡΟΚΑΤΑΒΟΛΗ</div>
+        <div class="flex__car flex__car--new"><img src="assets/cars/car4.webp" alt=""></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<section class="reviews" id="reviews" aria-labelledby="revTitle">
+  <div class="wrap reviews__head">
+    <div>
+      <p class="mono eyebrow"><span class="tick"></span>04. Κριτικές πελατών</p>
+      <h2 id="revTitle" class="h2 reveal">Τι λένε όσοι<br>οδήγησαν <em>Hera.</em></h2>
+    </div>
+    <div class="gbadge">
+      <div class="gbadge__stars" aria-label="5 αστέρια">★★★★★</div>
+      <div class="mono"><b>320</b> Google κριτικές</div>
+      <a class="btn btn--ghost btn--sm" href="https://www.google.com/search?q=HERA+RENTAL+%CE%97%CF%81%CE%AC%CE%BA%CE%BB%CE%B5%CE%B9%CE%BF" target="_blank" rel="noopener">Γράψτε μια κριτική ↗</a>
+    </div>
+  </div>
+  <div class="rev-rail" id="revRail">
+    <figure class="rev"><div class="rev__stars">★★★★★</div><blockquote>Εξαιρετική εμπειρία από τη HERA RENTAL! Η εξυπηρέτηση ήταν άψογη, το προσωπικό πολύ ευγενικό και επαγγελματικό και η διαδικασία ενοικίασης έγινε γρήγορα και χωρίς καμία ταλαιπωρία.</blockquote><figcaption class="mono">Google · Επαληθευμένη κριτική</figcaption></figure>
+    <figure class="rev"><div class="rev__stars">★★★★★</div><blockquote>Το van ήταν άνετο, καθαρό και σε καλή κατάσταση. Πολύ σωστοί επαγγελματίες και πάνω απ’ όλα ανθρώπινη εξυπηρέτηση. Θα ξανανοικιάσω σίγουρα από εκεί.</blockquote><figcaption class="mono">Google · Επαληθευμένη κριτική</figcaption></figure>
+    <figure class="rev"><div class="rev__stars">★★★★★</div><blockquote>Άριστοι επαγγελματίες και άμεσοι. Το αυτοκίνητο ήταν σε άριστη κατάσταση και δεν αντιμετωπίσαμε κανένα πρόβλημα.</blockquote><figcaption class="mono">Google · Επαληθευμένη κριτική</figcaption></figure>
+    <figure class="rev"><div class="rev__stars">★★★★★</div><blockquote>Εξαιρετικά σε όλα.</blockquote><figcaption class="mono">Konstantinos P. · Google</figcaption></figure>
+    <figure class="rev"><div class="rev__stars">★★★★★</div><blockquote>Η εξυπηρέτηση ιδιαίτερα φιλική. Πολύ καλός επαγγελματίας στον χώρο του αυτοκινήτου.</blockquote><figcaption class="mono">Google · Επαληθευμένη κριτική</figcaption></figure>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="cta" id="contact" aria-labelledby="ctaTitle">
+  <div class="cta__streaks" aria-hidden="true"></div>
+  <div class="wrap cta__inner">
+    <p class="mono eyebrow eyebrow--dark"><span class="tick"></span>05. Έχετε απορίες; Ρωτήστε μας</p>
+    <h2 id="ctaTitle" class="cta__title"><a href="tel:+302104402050" class="cta__phone"><span>210</span> <span>440</span> <span>2050</span></a></h2>
+    <div class="cta__btns">
+      <a class="btn btn--dark magnetic" href="tel:+302104402050"><span>Καλέστε μας</span><i>☎</i></a>
+      <a class="btn btn--outline magnetic" href="mailto:info@herarental.gr"><span>Φόρμα επικοινωνίας</span><i>✉</i></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="ftr">
+  <div class="wrap ftr__grid">
+    <div class="ftr__brand">
+      <img src="assets/logo.png" alt="HERA RENTAL" class="ftr__logo">
+      <p>Η HERA RENTAL, με έδρα το Ηράκλειο Αττικής, δραστηριοποιείται στον χώρο της ενοικίασης αυτοκινήτων και παρέχει επιλογές για βραχυχρόνια ενοικίαση αυτοκινήτου αλλά και μακροχρόνια μίσθωση.</p>
+    </div>
+    <div>
+      <h4 class="mono">Στοιχεία επικοινωνίας</h4>
+      <ul>
+        <li><a href="https://maps.google.com/?q=Λ.+Ηρακλείου+425,+Ηράκλειο+14122" target="_blank" rel="noopener">Λ. Ηρακλείου 425, Ηράκλειο 14122</a></li>
+        <li><a href="tel:+302104402050">+30 210 440 2050</a></li>
+        <li><a href="mailto:info@herarental.gr">info@herarental.gr</a></li>
+        <li><a href="mailto:support@herarental.gr">support@herarental.gr</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="mono">Ωράριο λειτουργίας</h4>
+      <ul class="hours">
+        <li><span>Δευτέρα – Παρασκευή</span><b class="mono">09:00 – 18:00</b></li>
+        <li><span>Σάββατο</span><b class="mono">09:00 – 15:00</b></li>
+        <li><span>Κυριακή</span><b class="mono">09:00 – 15:00</b></li>
+      </ul>
+      <p class="open-now mono" id="openNow"></p>
+    </div>
+    <div>
+      <h4 class="mono">Γενικοί όροι χρήσης</h4>
+      <ul>
+        <li><a href="https://herarental.gr/">Βραχυχρόνια μίσθωση</a></li>
+        <li><a href="https://herarental.gr/">Μακροχρόνια μίσθωση</a></li>
+      </ul>
+      <div class="social">
+        <a href="https://www.instagram.com/hera__rental" aria-label="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+        <a href="https://www.tiktok.com/@herarental" aria-label="TikTok" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5M14 3c.5 3 2.5 5 5.5 5"/></svg></a>
+        <a href="https://www.facebook.com/people/Hera-Rental/61595117341585" aria-label="Facebook" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M14 21v-8h3l.5-3.5H14V7.5c0-1 .4-1.8 1.8-1.8H18V2.6C17.5 2.5 16.4 2.4 15.2 2.4 12.6 2.4 10.6 4 10.6 7v2.5H7.5V13h3.1v8"/></svg></a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap ftr__legal mono">
+    <span>© <span id="yr">2026</span> herarental.gr — All rights reserved.</span>
+    <span>ΜΗ.ΤΕ. 0259E81001040201 · Γ.Ε.ΜΗ. 190838203000</span>
+  </div>
+  <div class="ftr__huge" aria-hidden="true">HERA RENTAL</div>
+</footer>
+
+<a href="#booking" class="fab" id="fab" aria-label="Κράτηση"><span>Κράτηση</span></a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
