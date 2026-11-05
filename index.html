@@ -80,6 +80,18 @@
 
   /* Hero */
   .hero { padding:64px 0 72px; }
+  /* Hero is always a dark band (video is dark footage), in both themes */
+  .hero { position:relative; isolation:isolate; overflow:hidden; color-scheme:dark;
+    --bg:#0A0B0E; --surface:#16171C; --surface-2:#1E2027; --border:#2A2D35;
+    --text:#F4F5F2; --text-muted:#9A9FAA; --link:#4ADE80; --warning:#FBBF24; --danger:#F87171;
+    background:var(--bg); color:var(--text); }
+  .hero-media { position:absolute; inset:0; z-index:-1; pointer-events:none; }
+  .hero-media video { width:100%; height:100%; object-fit:cover; opacity:.55; }
+  .hero-media::after { content:""; position:absolute; inset:0;
+    background:
+      linear-gradient(90deg, var(--bg) 0%, color-mix(in srgb, var(--bg) 55%, transparent) 50%, color-mix(in srgb, var(--bg) 20%, transparent) 100%),
+      linear-gradient(0deg, var(--bg) 0%, transparent 35%); }
+  @media (max-width:959px) { .hero-media video { opacity:.4; } }
   .hero-grid { display:grid; gap:48px; align-items:center; }
   @media (min-width:960px) { .hero { padding:96px 0; } .hero-grid { grid-template-columns:1.1fr .9fr; gap:64px; } }
   .hero h1 { font-size:clamp(40px, 7vw, 68px); margin:16px 0 20px; }
@@ -211,6 +223,9 @@
 <main id="main">
   <!-- HERO -->
   <section class="hero" id="top">
+    <div class="hero-media" aria-hidden="true">
+      <video id="heroVideo" src="assets/hero.mp4" poster="assets/hero-poster.jpg" autoplay muted loop playsinline preload="auto"></video>
+    </div>
     <div class="wrap hero-grid">
       <div>
         <p class="eyebrow">Memecoin 101 · PDF guide</p>
@@ -451,6 +466,8 @@
       label();
     });
     document.getElementById('yr').textContent = new Date().getFullYear();
+    var v = document.getElementById('heroVideo');
+    if (v && window.matchMedia('(prefers-reduced-motion: reduce)').matches) { v.removeAttribute('autoplay'); v.pause(); }
   })();
 </script>
 </body>
