@@ -147,7 +147,7 @@
   @media (min-width:960px) { section.block { padding:96px 0; } }
   .sec-head { max-width:680px; margin-bottom:40px; }
   .sec-head h2 { font-size:clamp(32px, 5vw, 44px); margin-top:12px; }
-  .sec-head p { margin-top:16px; color:var(--text-muted); font-size:18px; }
+  .sec-head p:not(.eyebrow) { margin-top:16px; color:var(--text-muted); font-size:18px; }
 
   /* Fit */
   .fit { display:grid; gap:16px; }
@@ -205,6 +205,14 @@
   .btn-dark { background:var(--on-primary); color:#F4F5F2; }
   .btn-dark:hover { filter:brightness(1.4); }
   .final-box :focus-visible { outline-color:var(--on-primary); }
+
+  /* Refund policy */
+  .policy { margin-top:64px; }
+  .policy-list { max-width:880px; border-top:1px solid var(--border); }
+  .policy-item { display:grid; gap:8px; padding:20px 0; border-bottom:1px solid var(--border); }
+  @media (min-width:800px) { .policy-item { grid-template-columns:220px 1fr; gap:32px; } }
+  .policy-item h3 { font-size:18px; }
+  .policy-item p { color:var(--text-muted); max-width:65ch; }
 
   footer { padding:48px 0 40px; border-top:1px solid var(--border); margin-top:64px; font-size:14px; color:var(--text-muted); }
   .foot-top { display:flex; flex-wrap:wrap; justify-content:space-between; gap:20px; align-items:center; margin-bottom:28px; }
@@ -427,7 +435,7 @@
         </ul>
         <!-- Replace href with your Stripe Payment Link / Gumroad / Whop checkout URL. -->
         <a class="btn btn-primary" href="#checkout-link-needed">Buy the guide</a>
-        <p class="guarantee"><span class="ph ph-block">[REFUND POLICY, e.g. "All sales final" or "7-day refund"]</span></p>
+        <p class="guarantee">Instant download. All sales are final, no refunds. <a href="#refund">Refund policy</a></p>
       </div>
     </div>
   </section>
@@ -462,7 +470,7 @@
         </details>
         <details>
           <summary>What if it's not for me?</summary>
-          <p class="a"><span class="ph ph-block">[ANSWER: your refund policy in plain words]</span></p>
+          <p class="a">All sales are final, so read the chapter list and this FAQ before you buy. If the file doesn't download or won't open, email us and we'll send you a working copy. <a href="#refund">Read the full refund policy</a>.</p>
         </details>
         <details>
           <summary>Is this financial advice?</summary>
@@ -484,6 +492,38 @@
       </div>
     </div>
   </section>
+  <!-- REFUND POLICY -->
+  <section class="block policy" id="refund" aria-labelledby="refundH">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Refund policy</p>
+        <h2 id="refundH">All sales are final</h2>
+        <p>Last updated 6 November 2026</p>
+      </div>
+      <div class="policy-list">
+        <div class="policy-item">
+          <h3>No refunds</h3>
+          <p>Memecoin 101 is a digital PDF that you can download as soon as you pay. A downloaded file can't be returned, so we don't issue refunds. That includes changing your mind, buying by mistake, or how your trades go after reading it.</p>
+        </div>
+        <div class="policy-item">
+          <h3>EU and UK buyers</h3>
+          <p>Online purchases usually come with a 14-day right of withdrawal. For digital content you get straight away, that right ends once you have access to the file. By completing your purchase, you ask for immediate access and agree that you lose your right of withdrawal.</p>
+        </div>
+        <div class="policy-item">
+          <h3>When we'll help</h3>
+          <p>If the file won't download or won't open, or you were charged twice for one order, email <span class="ph">[contact email]</span> within 14 days with your receipt. We'll send you a working file or refund the duplicate charge.</p>
+        </div>
+        <div class="policy-item">
+          <h3>Before you buy</h3>
+          <p>Read the chapter list and the FAQ on this page first. If you still have a question, email us before you buy and we'll answer it.</p>
+        </div>
+        <div class="policy-item">
+          <h3>Your legal rights</h3>
+          <p>This policy doesn't affect any rights you have under the consumer laws of the country you live in.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer>
@@ -497,7 +537,7 @@
         <a href="#pricing">Pricing</a>
         <a href="#faq">FAQ</a>
         <a href="#contact-needed"><span class="ph">[contact email]</span></a>
-        <a href="#terms-needed"><span class="ph">[Terms &amp; refund policy]</span></a>
+        <a href="#refund">Refund policy</a>
       </nav>
     </div>
     <p class="disclaimer"><strong>Risk disclaimer:</strong> Memecoin 101 is an educational guide only. It is not financial, investment, legal or tax advice. Cryptocurrencies, and memecoins especially, are highly volatile and speculative. You can lose all the money you put in. Past performance, including any examples in the guide, doesn't predict future results. Do your own research and never trade more than you can afford to lose.</p>
